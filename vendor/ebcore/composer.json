@@ -1,0 +1,36 @@
+{
+    "name": "ebcore/framework",
+    "description": "A Modern Entity Based PHP Framework",
+    "type": "library",
+    "keywords": ["framework", "ebcore"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sajjad Bandezadeh",
+            "email": "sajjadbnz1@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "ext-json": "*",
+        "ext-mbstring": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "ebcore\\": "/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.0-dev"
+        }
+    }
+} 

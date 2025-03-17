@@ -1,0 +1,114 @@
+:root {
+    --bg-color: #1a1c1e;
+    --text-color: #e4e4e4;
+    --accent-color: #ff5757;
+    --border-color: #2d2f31;
+    --code-bg: #2a2c2e;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.error-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.error-header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.error-title {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin: 0;
+}
+
+.error-message {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+.error-details {
+    background: var(--code-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    overflow-x: auto;
+}
+
+.stack-trace {
+    font-family: 'SF Mono', Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+    margin: 0;
+}
+
+.error-section {
+    margin: 2rem 0;
+}
+
+.error-section-title {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.error-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.error-table th,
+.error-table td {
+    text-align: left;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+}
+
+.error-table th {
+    background: var(--code-bg);
+}
+
+.error-footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+}
+
+.code-snippet {
+    background: var(--code-bg);
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+.line-number {
+    color: #666;
+    margin-right: 1rem;
+    user-select: none;
+}
+
+.error-line {
+    background: rgba(255, 87, 87, 0.2);
+    display: block;
+}
+
+.code-context {
+    font-family: 'SF Mono', Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+} 

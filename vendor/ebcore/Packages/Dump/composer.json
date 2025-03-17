@@ -1,0 +1,13 @@
+{
+    "name": "ebcore/dump",
+    "description": "A Laravel-like dd() and dump() function for PHP",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "ebcore\\Packages\\Dump\\": ""
+        }
+    },
+    "require": {
+        "php": ">=7.4"
+    }
+} 

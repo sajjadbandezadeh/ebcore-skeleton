@@ -1,0 +1,8 @@
+{
+    "name": "Ebcore Framework Skeleton",
+    "version": "1.0.0",
+    "debug": true,
+    "timezone": "Asia/Tehran",
+    "locale": "fa",
+    "url": "http://localhost"
+}
