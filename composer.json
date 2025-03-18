@@ -1,0 +1,47 @@
+{
+  "name": "sajjadbandezadeh/ebcore-skeleton",
+  "description": "Ebcore Framework Skeleton Project",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sajjad Bandezadeh",
+      "email": "sajjadbnz1@example.com"
+    }
+  ],
+  "require": {
+    "php": "^7.4|^8.1",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "ebcore\\": "/vendor/ebcore/",
+      "App\\": "/app/"
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "@php -r \"if (!file_exists('storage')) { mkdir('storage'); }\"",
+      "@php -r \"if (!file_exists('storage/cache')) { mkdir('storage/cache'); }\"",
+      "@php -r \"if (!file_exists('storage/logs')) { mkdir('storage/logs'); }\"",
+      "@php -r \"if (!file_exists('storage/framework')) { mkdir('storage/framework'); }\"",
+      "@php -r \"if (!file_exists('config')) { mkdir('config'); }\"",
+      "@php -r \"if (!file_exists('config/middleware.json')) { file_put_contents('config/middleware.json', '{\\\"throttle\\\":{\\\"max_requests\\\":60,\\\"decay_minutes\\\":1,\\\"enabled\\\":true},\\\"global_middlewares\\\":[\\\"ThrottleMiddleware\\\"]}'); }\""
+    ],
+    "post-autoload-dump": [
+      "@php -r \"if (!file_exists('storage')) { mkdir('storage'); }\"",
+      "@php -r \"if (!file_exists('storage/cache')) { mkdir('storage/cache'); }\"",
+      "@php -r \"if (!file_exists('storage/logs')) { mkdir('storage/logs'); }\"",
+      "@php -r \"if (!file_exists('storage/framework')) { mkdir('storage/framework'); }\"",
+      "@php -r \"if (!file_exists('config')) { mkdir('config'); }\"",
+      "@php -r \"if (!file_exists('config/middleware.json')) { file_put_contents('config/middleware.json', '{\\\"throttle\\\":{\\\"max_requests\\\":60,\\\"decay_minutes\\\":1,\\\"enabled\\\":true},\\\"global_middlewares\\\":[\\\"ThrottleMiddleware\\\"]}'); }\""
+    ]
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}

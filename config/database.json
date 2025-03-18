@@ -1,0 +1,8 @@
+{  
+    "db": {
+        "host": "localhost",  
+        "database": "ebcore_db",
+        "username": "root",
+        "password": ""
+    }
+}
