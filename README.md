@@ -31,7 +31,7 @@ Ebcore is a modern and powerful PHP framework inspired by Entity-Based architect
 Create a new project with Ebcore:
 
 ```bash
-composer create-project sajjadbandezadeh/ebcore-skeleton my-project
+composer create-project ebcore/skeleton my-project
 cd my-project
 ```
 
