@@ -5,6 +5,7 @@
         "enabled": true
     },
     "global_middlewares": [
-        "ThrottleMiddleware"
+        "ThrottleMiddleware",
+        "DuplicateRequestMiddleware"
     ]
 } 

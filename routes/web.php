@@ -21,6 +21,7 @@ $router = new Router();
 
 $router->map('GET', '/', 'User','UserController', 'index');
 $router->map('GET', '/users', 'User','UserController', 'index', 'UserRegisterEvent', 'after');
+$router->map('GET', '/users/access', 'User','UserController', 'index', null,null,'CheckUserPermissionMiddleware');
 $router->map('GET', '/users/{id}', 'User','UserController', 'getById');
 $router->map('GET', '/users/customResponse', 'User','UserController', 'indexCustomResponse');
 $router->map('GET', '/users/customData', 'User','UserController', 'indexCustomData');
