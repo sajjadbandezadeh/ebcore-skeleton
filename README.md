@@ -122,13 +122,10 @@ class CheckUserPermissionMiddleware extends BaseMiddleware
                 'user_id' => $_SESSION['user_id'] ?? null
             ]);
 
-            return $this->jsonResponse([
-                'error' => 'Permission Denied',
-                'message' => 'You do not have the required permission.'
-            ], 403);
+            return Response::json(null, "You do not have the required permission", 403, false);
         }
         
-        return $next($request);
+        return parent::next();
     }
 }
 ```
