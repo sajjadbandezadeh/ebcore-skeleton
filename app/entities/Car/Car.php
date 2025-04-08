@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Entities\Car;
+namespace App\entities\Car;
 
-use ebcore\DB\Model;
+use ebcore\framework\DB\Model;
 
 class Car extends Model
 {

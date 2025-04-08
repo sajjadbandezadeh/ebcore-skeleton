@@ -2,7 +2,7 @@
   "name": "ebcore/skeleton",
   "description": "Ebcore PHP Framework Skeleton Project",
   "type": "project",
-  "keywords": ["framework", "ebcore", "iranian php framework"],
+  "keywords": ["php framework", "ebcore", "ebcore framework"],
   "license": "MIT",
   "authors": [
     {

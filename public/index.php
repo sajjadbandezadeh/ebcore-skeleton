@@ -56,6 +56,7 @@ spl_autoload_register(function ($class) {
         return;
     }
     // Check in app directory
+
     $appPath = ROOT_PATH . '/' . $class . '.php';
     if (file_exists($appPath)) {
         require_once $appPath;
@@ -73,8 +74,13 @@ spl_autoload_register(function ($class) {
 | without exposing the vendor directory structure.
 |
 */
+//
+//if (!class_exists(ebcore\Packages\ErrorHandler\AssetHandler::class)) {
+//    echo "Ebcore: Make sure you have run composer install with a php version 8.1 or above";
+//    exit();
+//}
 
-ebcore\Packages\ErrorHandler\AssetHandler::init();
+ebcore\framework\Packages\ErrorHandler\AssetHandler::init();
 
 /*
 |--------------------------------------------------------------------------
@@ -87,7 +93,7 @@ ebcore\Packages\ErrorHandler\AssetHandler::init();
 |
 */
 
-new ebcore\Core\Exception();
+new ebcore\framework\Core\Exception();
 
 /*
 |--------------------------------------------------------------------------
@@ -100,7 +106,7 @@ new ebcore\Core\Exception();
 |
 */
 
-$config = ebcore\Core\Config::getInstance();
+$config = ebcore\framework\Core\Config::getInstance();
 
 /*
 |--------------------------------------------------------------------------

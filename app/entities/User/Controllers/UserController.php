@@ -2,12 +2,11 @@
 
 namespace App\entities\User\Controllers;
 
-use App\entities\User\User;
 use App\provider\mappers\UserMappers\UserIndexMapper;
 use App\provider\response\CustomResponse;
-use ebcore\DB\DbContext;
-use ebcore\Module\Response;
-use ebcore\Packages\Dump\Dump;
+use ebcore\framework\DB\DbContext;
+use ebcore\framework\Module\Response;
+use ebcore\framework\Packages\Dump\Dump;
 
 class UserController {
 
@@ -15,7 +14,7 @@ class UserController {
         $users = DbContext::User()->all();
         // Dump::dd($users);
         if (empty($users)) {
-            return Response::json(null, "No users found", 404, false);
+            Response::json(null, "No users found", 404, false);
         }
         return Response::json($users);
     }

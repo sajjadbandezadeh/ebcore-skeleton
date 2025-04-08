@@ -1,6 +1,6 @@
 <?php
 
-namespace Entities\Car\Http;
+namespace App\entities\Car\Controllers;
 
 class Controller {
     public function index() {

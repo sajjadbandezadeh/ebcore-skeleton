@@ -2,8 +2,9 @@
 
 namespace App\entities\User\Middlewares;
 
-use ebcore\Middlewares\BaseMiddleware;
-use ebcore\Packages\Logger\Logger;
+use ebcore\framework\Middlewares\BaseMiddleware;
+use ebcore\framework\Module\Response;
+use ebcore\framework\Packages\Logger\Logger;
 
 class CheckUserPermissionMiddleware extends BaseMiddleware
 {
@@ -14,29 +15,25 @@ class CheckUserPermissionMiddleware extends BaseMiddleware
         $this->requiredPermission = $permission;
     }
 
-    public function handle($request, $next)
+    public function handle()
     {
-        // Example: Check if user has required permission
+        // Example: Check if the user has the required permission
+
         if (!$this->checkPermission()) {
             Logger::warning("Permission denied for user", [
                 'permission' => $this->requiredPermission,
                 'user_id' => $_SESSION['user_id'] ?? null
             ]);
 
-            return $this->jsonResponse([
-                'error' => 'Permission Denied',
-                'message' => 'You do not have the required permission.'
-            ], 403);
+            return Response::json(null, "You do not have the required permission", 403, false);
         }
 
-        return $next($request);
+        return parent::next();
     }
 
     private function checkPermission()
     {
-        // Here you would implement your actual permission checking logic
-        // This is just a placeholder
-        return isset($_SESSION['user_permissions']) && 
-               in_array($this->requiredPermission, $_SESSION['user_permissions']);
+        return isset($_SESSION['user_permissions']) &&
+            in_array($this->requiredPermission, $_SESSION['user_permissions']);
     }
-} 
+}

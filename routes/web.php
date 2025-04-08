@@ -1,8 +1,8 @@
 <?php
 
-use ebcore\Core\Router;
+use ebcore\framework\Core\Router;
 
-require_once ROOT_PATH . '/vendor/ebcore/Core/Exception.php';
+require_once ROOT_PATH . '/vendor/ebcore/framework/Core/Exception.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -19,14 +19,14 @@ $router = new Router();
 
 // Define your routes here
 
-$router->map('GET', '/', 'User','UserController', 'index');
-$router->map('GET', '/users', 'User','UserController', 'index', 'UserRegisterEvent', 'after');
-$router->map('GET', '/users/{id}', 'User','UserController', 'getById');
-$router->map('GET', '/users/customResponse', 'User','UserController', 'indexCustomResponse');
-$router->map('GET', '/users/customData', 'User','UserController', 'indexCustomData');
+$router->map('GET', '/', 'User', 'UserController', 'index');
+$router->map('GET', '/users', 'User', 'UserController', 'index', 'UserRegisterEvent', 'after');
+$router->map('GET', '/users/{id}', 'User', 'UserController', 'getById');
+$router->map('GET', '/users/customResponse', 'User', 'UserController', 'indexCustomResponse');
+$router->map('GET', '/users/customData', 'User', 'UserController', 'indexCustomData');
 
-$router->map('POST', '/users/create', 'User','UserController', 'create');
-$router->map('PUT', '/users/{id}', 'User','UserController', 'edit');
-$router->map('DELETE', '/users/{id}', 'User','UserController', 'delete');
+$router->map('POST', '/users/create', 'User', 'UserController', 'create');
+$router->map('PUT', '/users/{id}', 'User', 'UserController', 'edit');
+$router->map('DELETE', '/users/{id}', 'User', 'UserController', 'delete', null, null, ['CheckUserPermissionMiddleware']);
 
 $router->run();
