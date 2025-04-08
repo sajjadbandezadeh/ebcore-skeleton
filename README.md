@@ -142,7 +142,7 @@ use ebcore\Module\Response;
 
 class UserRegisterEvent extends Events
 {
-    public function execute()
+    public function execute(): void
     {
         if ($this->isExecuted('UserRegisterEvent')) {
             return;
