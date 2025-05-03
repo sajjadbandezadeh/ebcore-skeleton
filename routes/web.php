@@ -19,8 +19,9 @@ $router = new Router();
 
 // Define your routes here
 
-$router->map('GET', '/', 'User', 'UserController', 'index');
-$router->map('GET', '/users', 'User', 'UserController', 'index', 'UserRegisterEvent', 'after');
+$router->map('GET', '/', 'System', 'SystemController', 'welcome');
+$router->map('GET', '/users', 'User', 'UserController', 'index');
+$router->map('GET', '/users/event', 'User', 'UserController', 'index', 'UserRegisterEvent', 'after');
 $router->map('GET', '/users/{id}', 'User', 'UserController', 'getById');
 $router->map('GET', '/users/customResponse', 'User', 'UserController', 'indexCustomResponse');
 $router->map('GET', '/users/customData', 'User', 'UserController', 'indexCustomData');
