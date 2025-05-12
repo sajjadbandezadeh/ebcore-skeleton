@@ -7,12 +7,12 @@
   "authors": [
     {
       "name": "Sajjad Bandezadeh",
-      "email": "sajjadbnz1@example.com"
+      "email": "sajjadbnz1@gmail.com"
     }
   ],
   "require": {
-    "php": "^7.4 || ^8.0",
-    "ebcore/framework": "^1.0.0",
+    "php": "^7.4 || ^8.1",
+    "ebcore/framework": "*",
     "ext-json": "*"
   },
   "autoload": {
