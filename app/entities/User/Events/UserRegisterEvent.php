@@ -7,8 +7,10 @@ use ebcore\framework\DB\DbContext;
 
 class UserRegisterEvent extends Events
 {
+    // Event functions must be void
     public function execute(): void
     {
+        // $this->isExecuted('UserRegisterEvent') -> boolean result
         if ($this->isExecuted('UserRegisterEvent')) {
             return;
         }
@@ -16,7 +18,7 @@ class UserRegisterEvent extends Events
         try {
             $user = array();
             $user["name"] = "test1";
-            $user["family"] = "test1";
+            $user["fam4ily"] = "test1";
             $user["created_at"] = date("Y/m/d h:i:sa");
             DbContext::User()->create($user);
             $this->markAsExecuted('UserRegisterEvent');

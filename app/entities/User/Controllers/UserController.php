@@ -4,6 +4,7 @@ namespace App\entities\User\Controllers;
 
 use App\provider\mappers\UserMappers\UserIndexMapper;
 use App\provider\response\CustomResponse;
+use ebcore\framework\Core\Cache;
 use ebcore\framework\DB\DbContext;
 use ebcore\framework\Module\Response;
 use ebcore\framework\Packages\Dump\Dump;

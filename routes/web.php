@@ -21,7 +21,7 @@ $router = new Router();
 
 $router->map('GET', '/', 'System', 'SystemController', 'welcome');
 $router->map('GET', '/users', 'User', 'UserController', 'index');
-$router->map('GET', '/users/event', 'User', 'UserController', 'index', 'UserRegisterEvent', 'after');
+$router->map('GET', '/users/event', 'User', 'UserController', 'index', 'UserRegisterEvent', 'before');
 $router->map('GET', '/users/{id}', 'User', 'UserController', 'getById');
 $router->map('GET', '/users/customResponse', 'User', 'UserController', 'indexCustomResponse');
 $router->map('GET', '/users/customData', 'User', 'UserController', 'indexCustomData');
@@ -29,5 +29,14 @@ $router->map('GET', '/users/customData', 'User', 'UserController', 'indexCustomD
 $router->map('POST', '/users/create', 'User', 'UserController', 'create');
 $router->map('PUT', '/users/{id}', 'User', 'UserController', 'edit');
 $router->map('DELETE', '/users/{id}', 'User', 'UserController', 'delete', null, null, ['CheckUserPermissionMiddleware']);
+
+$router->map('GET',
+    '/users/event/middleware',
+    'User',
+    'UserController',
+    'index',
+    'UserRegisterEvent',
+    'after',
+    ['CheckUserPermissionMiddleware']);
 
 $router->run();
